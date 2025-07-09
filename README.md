@@ -53,6 +53,6 @@ END PROGRAM
 
 ## You can check the [WireFrame here](https://drive.google.com/drive/folders/1LMUCB4N2V3ZH1M2t5TxaWbozZPM4_8dT?usp=sharing)
 
-## You can check the [Trello To Do List herr](https://trello.com/invite/b/686e6356dd76c4f90af1e074/ATTIa5090a38d96e271c7c063ae7ace02ab99A80F9AA/ga-project-1)
+## You can check the [Trello To Do List here](https://trello.com/invite/b/686e6356dd76c4f90af1e074/ATTIa5090a38d96e271c7c063ae7ace02ab99A80F9AA/ga-project-1)
 
 
