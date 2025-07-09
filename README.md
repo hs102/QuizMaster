@@ -1,6 +1,6 @@
 # Yaseen-Project-1
 
-# 🧠 Pseudocode for QuizMaster: Geography & History
+# 🧠 Pseudocode for Yaseen's Quiz: Geography & History
 
 ## 🎮 Overview
 This pseudocode outlines the core logic for a quiz web app with two themes: **Geography** and **History**. It includes theme selection, question handling, scoring mechanics, and result display.
