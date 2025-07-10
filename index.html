@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuizMaster: Geography & History</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- 🧭 Theme Selection Screen -->
+  <div id="theme-screen">
+    <h2>Quiz Project</h2>
+    <h3><strong>Geography & History</strong></h3>
+    <p>Choose Theme</p>
+
+    <div class="theme-buttons">
+      <button onclick="selectTheme('geography')">Geography</button>
+      <button onclick="selectTheme('history')">History</button>
+    </div>
+
+    <button id="start-button" onclick="startQuiz()">START</button>
+  </div>
+
+  <!-- Question Screen -->
+  <div id="question-screen" style="display: none;">
+    <p>Category | Question <span id="question-number">1</span>/10 | Score: <span id="score">0</span></p>
+
+    <div id="question-box">Question goes here</div>
+
+    <div class="answer-buttons">
+      <button class="answer-btn">answer #1</button>
+      <button class="answer-btn">answer #2</button>
+      <button class="answer-btn">answer #3</button>
+      <button class="answer-btn">answer #4</button>
+    </div>
+
+    <button onclick="submitAnswer()">Submit</button>
+  </div>
+
+  <!--  Result Screen -->
+  <div id="result-screen" style="display: none;">
+    <h3>Quiz Completed</h3>
+    <p>Your Score: <span id="final-score">70</span></p>
+    <h2 id="result-message">YOU PASSSSSEEEDDD</h2>
+
+    <button onclick="restartQuiz()">Restart</button>
+    <button onclick="goHome()">Home</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

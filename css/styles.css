@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Shared Container Style */
+#theme-screen,
+#question-screen,
+#result-screen {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Headings */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Buttons */
+button {
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 8px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #303f9f;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Theme Selection */
+.theme-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.theme-buttons button {
+  flex: 1;
+  margin: 0 10px;
+}
+
+/* Question Box */
+#question-box {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* Answer Buttons */
+.answer-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.answer-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.answer-btn:hover {
+  border: 1px solid #3f51b5;
+  background-color: #d1d9ff;
+}
+
+/* Result Message */
+#result-message {
+  color: green;
+  margin: 20px 0;
+  font-size: 20px;
+}
