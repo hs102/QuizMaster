@@ -9,7 +9,10 @@ const historyButton = document.getElementById("history-button")
 historyButton.addEventListener("click", startQuiz)
 
 
-
+const answerButton1 = document.querySelector("answer-btn-1");
+const answerButton2 = document.querySelector("answer-btn-2");
+const answerButton3 = document.querySelector("answer-btn-3");
+const answerButton4 = document.querySelector("answer-btn-4");
 
 
 
@@ -32,6 +35,7 @@ let currentQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let question = null;
+let options = [];
 
 function selectTheme(theme) {
 questionBox.innerHTML = ""; // Clear previous questions
@@ -47,6 +51,7 @@ questionBox.innerHTML = ""; // Clear previous questions
   }
   question = currentQuestions[0]
   questionBox.innerHTML = `<h2>${question.question}</h2>`;
+  return currentQuestionIndex += 0;
 
   // fetch(`assets/data/${theme}.json`)
   //   .then(response => response.json())
@@ -61,6 +66,20 @@ questionBox.innerHTML = ""; // Clear previous questions
   //     console.error("Failed to load questions:", error);
   //   });
 }
+
+function displayOptions() {
+  answerButtons = [] //reset answer buttons
+  answerButtons.innerHTML = ""; // Clear previous options
+  
+  if (theme === "geography") { 
+    options = geo.options;
+    answerButton1.innerHTML = `<p>${options[0]}</p>`;
+
+  }
+}
+
+
+
 
 
 function showQuestionScreen() {
@@ -91,11 +110,13 @@ function selectAnswer(selected) {
 }
 
 
-function showResult() {
-  document.getElementById("question-screen").style.display = "none";
-  document.getElementById("result-screen").style.display = "block";
+// function showResult() {
+//   document.getElementById("question-screen").style.display = "none";
+//   document.getElementById("result-screen").style.display = "block";
 
-  document.getElementById("final-score").textContent = score;
-  document.getElementById("result-message").textContent = 
-    score >= 60 ? "YOU PASSSSSEEEDDD" : "You failed!";
-}
+//   document.getElementById("final-score").textContent = score;
+//   document.getElementById("result-message").textContent = 
+//     score >= 60 ? "YOU PASSSSSEEEDDD" : "You failed!";
+// }
+
+
