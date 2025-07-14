@@ -9,10 +9,10 @@ const historyButton = document.getElementById("history-button")
 historyButton.addEventListener("click", startQuiz)
 
 
-const answerButton1 = document.querySelector("answer-btn-1");
-const answerButton2 = document.querySelector("answer-btn-2");
-const answerButton3 = document.querySelector("answer-btn-3");
-const answerButton4 = document.querySelector("answer-btn-4");
+const answerButton1 = document.querySelector(".answer-btn-1");
+const answerButton2 = document.querySelector(".answer-btn-2");
+const answerButton3 = document.querySelector(".answer-btn-3");
+const answerButton4 = document.querySelector(".answer-btn-4");
 
 
 
@@ -25,6 +25,11 @@ function startQuiz() {
   document.getElementById("question-screen").style.display = "block"
   selectTheme(this.id.replace("-button", "")); // Get the theme from the button ID
 
+  // Get the selected theme and make it available to displayOptions
+  
+  displayOptions(this.id.replace("-button", "")); // Pass the theme to displayOptions
+  
+  // Display the options for the first question
   // Reset the current question index and scores
   currentQuestionIndex = 0;
   score = 0;
@@ -51,7 +56,7 @@ questionBox.innerHTML = ""; // Clear previous questions
   }
   question = currentQuestions[0]
   questionBox.innerHTML = `<h2>${question.question}</h2>`;
-  return currentQuestionIndex += 0;
+  return currentQuestionIndex += 1;
 
   // fetch(`assets/data/${theme}.json`)
   //   .then(response => response.json())
@@ -67,15 +72,27 @@ questionBox.innerHTML = ""; // Clear previous questions
   //   });
 }
 
-function displayOptions() {
+function displayOptions(theme) {
   answerButtons = [] //reset answer buttons
   answerButtons.innerHTML = ""; // Clear previous options
   
   if (theme === "geography") { 
-    options = geo.options;
+    options = [...question.options];
     answerButton1.innerHTML = `<p>${options[0]}</p>`;
-
+    answerButton2.innerHTML = `<p>${options[1]}</p>`;
+    answerButton3.innerHTML = `<p>${options[2]}</p>`;
+    answerButton4.innerHTML = `<p>${options[3]}</p>`;
   }
+  
+  else if (theme === "history") {
+    options = [...question.options];
+    console.log(options);
+    answerButton1.innerHTML = `<p>${options[0]}</p>`;
+    answerButton2.innerHTML = `<p>${options[1]}</p>`;
+    answerButton3.innerHTML = `<p>${options[2]}</p>`;
+    answerButton4.innerHTML = `<p>${options[3]}</p>`;
+  }
+
 }
 
 
