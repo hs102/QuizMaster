@@ -57,7 +57,7 @@ questionBox.innerHTML = ""; // Clear previous questions
   }
   question = currentQuestions[0]
   questionBox.innerHTML = `<h2>${question.question}</h2>`;
-  return currentQuestionIndex += 1;
+  
 
   // fetch(`assets/data/${theme}.json`)
   //   .then(response => response.json())
@@ -118,10 +118,12 @@ function selectAnswer(selected) {
     score -= 5;
   }
 
-  currentQuestionIndex++;
+  
 
   if (currentQuestionIndex < currentQuestions.length) {
     displayQuestion();
+
+    
   } else {
     showResult();
   }
