@@ -31,8 +31,9 @@ function startQuiz() {
   
   // Display the options for the first question
   // Reset the current question index and scores
-  currentQuestionIndex = 0;
-  score = 0;
+  nextQuestion()
+
+
 }
 
 
@@ -125,6 +126,25 @@ function selectAnswer(selected) {
     showResult();
   }
 }
+
+
+
+
+function nextQuestion() {
+  currentQuestionIndex++; 
+  if (currentQuestionIndex < currentQuestions.length) {
+    question = currentQuestions[currentQuestionIndex];
+    questionBox.innerHTML = `<h2>${question.question}</h2>`;
+    displayOptions(currentQuestions === geo ? "geography" : "history");
+  }
+}
+
+// Add event listeners to answer buttons
+answerButton1.addEventListener("click", nextQuestion);
+answerButton2.addEventListener("click", nextQuestion);
+answerButton3.addEventListener("click", nextQuestion);
+answerButton4.addEventListener("click", nextQuestion);
+
 
 
 // function showResult() {
