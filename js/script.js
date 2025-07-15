@@ -123,7 +123,7 @@ function selectAnswer(selected) {
   if (currentQuestionIndex < currentQuestions.length) {
     displayQuestion();
 
-    
+
   } else {
     showResult();
   }
@@ -139,6 +139,47 @@ function nextQuestion() {
     questionBox.innerHTML = `<h2>${question.question}</h2>`;
     displayOptions(currentQuestions === geo ? "geography" : "history");
   }
+
+  // Check if we've reached the end of questions
+  if (currentQuestionIndex >= currentQuestions.length) {
+    
+    console.log("Quiz completed. Final score:", score);
+    return;
+  }
+
+  // Add event listeners to check answers
+  answerButton1.onclick = function() {
+    if (options[0] === question.answer) {
+      score += 10;
+      console.log("Correct! Score:", score);
+    }
+    nextQuestion();
+  };
+
+  answerButton2.onclick = function() {
+    if (options[1] === question.answer) {
+      score += 10;
+      console.log("Correct! Score:", score);
+    }
+    nextQuestion();
+  };
+
+  answerButton3.onclick = function() {
+    if (options[2] === question.answer) {
+      score += 10;
+      console.log("Correct! Score:", score);
+    }
+    nextQuestion();
+  };
+
+  answerButton4.onclick = function() {
+    if (options[3] === question.answer) {
+      score += 10;
+      console.log("Correct! Score:", score);
+    }
+    nextQuestion();
+  };
+
 }
 
 // Add event listeners to answer buttons

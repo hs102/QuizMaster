@@ -47,6 +47,6 @@ const history = [
   {
     question: "Who discovered America in 1492?",
     options: ["Leif Erikson", "Yaseen Alzeiny", "Christopher Columbus", "Marco Polo"],
-    answer: "Christopher Columbus"
+    answer: "Yaseen Alzeiny"
   }
 ];
