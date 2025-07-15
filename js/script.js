@@ -109,85 +109,68 @@ function showQuestionScreen() {
 
 
 
-// function selectAnswer(selected) {
-//   const correct = currentQuestions[currentQuestionIndex].answer;
-
-//   if (selected === correct) {
-//     score += 10;
-//   } else {
-//     score -= 5;
-//   }
-
-  
-
-//   if (currentQuestionIndex < currentQuestions.length) {
-//     displayQuestion();
-
-
-//   } else {
-//     showResult();
-//   }
-// }
-
-
+// Variable to store selected answer
 let selectedAnswer = null;
 
-function nextQuestion() {
-  if (currentQuestionIndex < currentQuestions.length) {
-    question = currentQuestions[currentQuestionIndex];
-    questionBox.innerHTML = `<h2>${question.question}</h2>`;
-    displayOptions(currentQuestions === geo ? "geography" : "history");
-  }
+// Add event listeners to answer buttons
+answerButton1.addEventListener("click", () => selectAnswer(0));
+answerButton2.addEventListener("click", () => selectAnswer(1));
+answerButton3.addEventListener("click", () => selectAnswer(2));
+answerButton4.addEventListener("click", () => selectAnswer(3));
 
-  // Check if we've reached the end of questions
-  if (currentQuestionIndex >= currentQuestions.length) {
-    
-    console.log("Quiz completed. Final score:", score);
-    return;
-  }
-
-  // Add event listeners to check answers
-  // answerButton1.onclick = function() {
-    if (selectedAnswer === question.answer) {
-      score += 10;
-      console.log("Correct! Score:", score);
-    }
-    // nextQuestion();
-  // };
-
-  // answerButton2.onclick = function() {
-    if (options[1] === question.answer) {
-      score += 10;
-      console.log("Correct! Score:", score);
-    }
-    // nextQuestion();
-  // };
-
-  // answerButton3.onclick = function() {
-    if (options[2] === question.answer) {
-      score += 10;
-      console.log("Correct! Score:", score);
-    }
-    // nextQuestion();
-    // };
-    
-    // answerButton4.onclick = function() {
-      if (options[3] === question.answer) {
-        score += 10;
-        console.log("Correct! Score:", score);
-      }
-      // nextQuestion();
-      
-      // };
-      document.getElementById("score").textContent = score;
-      currentQuestionIndex += 1; 
+// Function to store the selected answer
+function selectAnswer(index) {
+  selectedAnswer = currentQuestions[currentQuestionIndex].options[index];
+  checkAnswer();
 }
 
-// Add event listeners to answer buttons
-answerButton1.addEventListener("click", nextQuestion);
-answerButton2.addEventListener("click", nextQuestion);
-answerButton3.addEventListener("click", nextQuestion);
-answerButton4.addEventListener("click", nextQuestion);
+function checkAnswer() {
+  if (selectedAnswer === null) return;
+  
+  // Get the current question
+  const correct = currentQuestions[currentQuestionIndex].answer;
+  console.log("Selected Answer:", selectedAnswer);
+  console.log("Correct Answer:", correct);
+  // Check if the answer is correct
+  if (selectedAnswer === correct) {
+    score += 10;
+    console.log("Correct! Score:", score);
+  } else {
+   
+    console.log("Incorrect! Score:", score);
+  }
+  
+  // Update the score display
+  document.getElementById("score").textContent = score;
+  
+  // Move to next question
+  currentQuestionIndex++;
+  
+  // Reset selected answer for next question
+  selectedAnswer = null;
+  
+  // Check if we've reached the end of questions
+  if (currentQuestionIndex >= currentQuestions.length) {
+    console.log("Quiz completed. Final score:", score);
+    showResult();
+    return;
+  }
+  
+  // Display the next question
+  nextQuestion();
+}
+
+function nextQuestion() {
+  // Get the current question
+  question = currentQuestions[currentQuestionIndex];
+  
+  // Display the question
+  questionBox.innerHTML = `<h2>${question.question}</h2>`;
+  
+  // Display the options 
+  const theme = currentQuestions === geo ? "geography" : "history";
+  displayOptions(theme);
+}
 
 
 

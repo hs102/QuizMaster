@@ -17,7 +17,7 @@ const geo = [
   {
     question: "Which country has the most time zones?",
     options: ["Russia", "USA", "China", "France"],
-    answer: "France"
+    answer: "Russia"
   },
   {
     question: "Which desert is the largest in the world (non-polar)?",
