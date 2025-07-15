@@ -178,8 +178,9 @@ function nextQuestion() {
       console.log("Correct! Score:", score);
     }
     nextQuestion();
+    
   };
-
+document.getElementById("score").textContent = score;
 }
 
 // Add event listeners to answer buttons
@@ -187,6 +188,11 @@ answerButton1.addEventListener("click", nextQuestion);
 answerButton2.addEventListener("click", nextQuestion);
 answerButton3.addEventListener("click", nextQuestion);
 answerButton4.addEventListener("click", nextQuestion);
+
+
+
+
+
 
 
 
