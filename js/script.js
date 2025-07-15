@@ -74,8 +74,8 @@ questionBox.innerHTML = ""; // Clear previous questions
 }
 
 function displayOptions(theme) {
-  answerButtons = [] //reset answer buttons
-  answerButtons.innerHTML = ""; // Clear previous options
+  // answerButtons = [] //reset answer buttons
+  // answerButtons.innerHTML = ""; // Clear previous options
   
   if (theme === "geography") { 
     options = [...question.options];
@@ -109,31 +109,30 @@ function showQuestionScreen() {
 
 
 
-function selectAnswer(selected) {
-  const correct = currentQuestions[currentQuestionIndex].answer;
+// function selectAnswer(selected) {
+//   const correct = currentQuestions[currentQuestionIndex].answer;
 
-  if (selected === correct) {
-    score += 10;
-  } else {
-    score -= 5;
-  }
+//   if (selected === correct) {
+//     score += 10;
+//   } else {
+//     score -= 5;
+//   }
 
   
 
-  if (currentQuestionIndex < currentQuestions.length) {
-    displayQuestion();
+//   if (currentQuestionIndex < currentQuestions.length) {
+//     displayQuestion();
 
 
-  } else {
-    showResult();
-  }
-}
+//   } else {
+//     showResult();
+//   }
+// }
 
 
-
+let selectedAnswer = null;
 
 function nextQuestion() {
-  currentQuestionIndex++; 
   if (currentQuestionIndex < currentQuestions.length) {
     question = currentQuestions[currentQuestionIndex];
     questionBox.innerHTML = `<h2>${question.question}</h2>`;
@@ -148,39 +147,40 @@ function nextQuestion() {
   }
 
   // Add event listeners to check answers
-  answerButton1.onclick = function() {
-    if (options[0] === question.answer) {
+  // answerButton1.onclick = function() {
+    if (selectedAnswer === question.answer) {
       score += 10;
       console.log("Correct! Score:", score);
     }
-    nextQuestion();
-  };
+    // nextQuestion();
+  // };
 
-  answerButton2.onclick = function() {
+  // answerButton2.onclick = function() {
     if (options[1] === question.answer) {
       score += 10;
       console.log("Correct! Score:", score);
     }
-    nextQuestion();
-  };
+    // nextQuestion();
+  // };
 
-  answerButton3.onclick = function() {
+  // answerButton3.onclick = function() {
     if (options[2] === question.answer) {
       score += 10;
       console.log("Correct! Score:", score);
     }
-    nextQuestion();
-  };
-
-  answerButton4.onclick = function() {
-    if (options[3] === question.answer) {
-      score += 10;
-      console.log("Correct! Score:", score);
-    }
-    nextQuestion();
+    // nextQuestion();
+    // };
     
-  };
-document.getElementById("score").textContent = score;
+    // answerButton4.onclick = function() {
+      if (options[3] === question.answer) {
+        score += 10;
+        console.log("Correct! Score:", score);
+      }
+      // nextQuestion();
+      
+      // };
+      document.getElementById("score").textContent = score;
+      currentQuestionIndex += 1; 
 }
 
 // Add event listeners to answer buttons
