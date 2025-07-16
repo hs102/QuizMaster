@@ -49,7 +49,7 @@ END PROGRAM
 ```
 # Wireframe 
 
-![Wireframe of Yasee's Quiz UI](https://cdn.discordapp.com/attachments/773852737993441280/1392629040988426362/image.png?ex=68703a5d&is=686ee8dd&hm=7b8505e7886bb6fa63e6c4af2498d881677681a5d1adf48ed499e3712a11f97e)
+![Wireframe of Yasee's Quiz UI](./assets/images/wireframe.png)
 
 ## You can check the [WireFrame here](https://drive.google.com/drive/folders/1LMUCB4N2V3ZH1M2t5TxaWbozZPM4_8dT?usp=sharing)
 
