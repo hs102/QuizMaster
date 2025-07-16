@@ -1,8 +1,8 @@
 const history = [
   {
     question: "Who was the first President of the United States?",
-    options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"],
-    answer: "George Washington"
+    options: ["Thomas Jefferson", "George Washington", "Miss Kristina", "John Adams"],
+    answer: "Miss Kristina"
   },
   {
     question: "Which war ended with the Treaty of Versailles?",

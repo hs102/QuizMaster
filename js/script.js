@@ -14,6 +14,7 @@ const answerButton2 = document.querySelector(".answer-btn-2");
 const answerButton3 = document.querySelector(".answer-btn-3");
 const answerButton4 = document.querySelector(".answer-btn-4");
 
+const catName1 = document.getElementById("catName")
 
 
 
@@ -83,6 +84,7 @@ function displayOptions(theme) {
     answerButton2.innerHTML = `<p>${options[1]}</p>`;
     answerButton3.innerHTML = `<p>${options[2]}</p>`;
     answerButton4.innerHTML = `<p>${options[3]}</p>`;
+    catName1.innerHTML = 'Geography';
   }
   
   else if (theme === "history") {
@@ -92,6 +94,7 @@ function displayOptions(theme) {
     answerButton2.innerHTML = `<p>${options[1]}</p>`;
     answerButton3.innerHTML = `<p>${options[2]}</p>`;
     answerButton4.innerHTML = `<p>${options[3]}</p>`;
+    catName1.innerHTML = 'History';
   }
 
 }
@@ -170,6 +173,13 @@ function nextQuestion() {
   // Display the options 
   const theme = currentQuestions === geo ? "geography" : "history";
   displayOptions(theme);
+
+
+
+  
+  document.getElementById("questionNumber").textContent = currentQuestionIndex + 1;
+
+
 }
 
 
