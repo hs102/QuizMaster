@@ -19,8 +19,12 @@ const catName1 = document.getElementById("catName")
 
 
 function startQuiz() {
-  // Hide the theme selection screen
+
+  question
+
+  // Hide the theme selection & results screen
   document.getElementById("theme-screen").style.display = "none"
+  // document.getElementById("result-screen").style.display = "none"
 
   // Show the question screen
   document.getElementById("question-screen").style.display = "block"
@@ -34,6 +38,40 @@ function startQuiz() {
   // Reset the current question index and scores
   nextQuestion()
 
+
+}
+
+
+function showResult() {
+
+  if(currentQuestionIndex === 10) {
+    document.getElementById("question-screen").style.display = "none";
+    document.getElementById("result-screen").style.display = "block";
+
+    document.getElementById("final-score").textContent = score;
+    document.getElementById("result-message").textContent = 
+      score >= 70 ? "YOU PASSSSSEEEDDD conrgatzz homie fr fr" : "HAHAHAHA LOSER you failed gg noob lmaooo";
+
+     
+  }
+  else {
+    
+    return
+}
+}
+
+
+function restartQuiz() {
+
+  
+  document.getElementById("question-screen").style.display = "none";
+  document.getElementById("result-screen").style.display = "none";
+  document.getElementById("theme-screen").style.display = "block";
+  currentQuestionIndex = 0;
+  score = 0;
+  document.getElementById("score").textContent = score;
+  questionBox.innerHTML = "";
+  selectedAnswer = null;
 
 }
 
@@ -178,7 +216,7 @@ function nextQuestion() {
 
   
   document.getElementById("questionNumber").textContent = currentQuestionIndex + 1;
-
+  showResult();
 
 }
 
@@ -189,13 +227,6 @@ function nextQuestion() {
 
 
 
-// function showResult() {
-//   document.getElementById("question-screen").style.display = "none";
-//   document.getElementById("result-screen").style.display = "block";
 
-//   document.getElementById("final-score").textContent = score;
-//   document.getElementById("result-message").textContent = 
-//     score >= 60 ? "YOU PASSSSSEEEDDD" : "You failed!";
-// }
 
 
