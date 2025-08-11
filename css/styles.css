@@ -72,13 +72,17 @@ button:disabled {
 /* Theme Selection */
 .theme-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin: 25px 0;
 }
 
 .theme-buttons button {
   flex: 1;
-  margin: 0 10px;
+  min-width: 120px;
+  max-width: 150px;
+  margin: 5px;
 }
 
 /* Question Box */
@@ -98,26 +102,34 @@ button:disabled {
 
 /* Answer Buttons */
 .answer-buttons {
-  display: grid;
-  color:#fff;
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
   margin-bottom: 25px;
-  color:#fff;
+  color: #fff;
 }
 
-.answer-btn {
-  background-color: #fff;
-  color:#fff;
+.answer-buttons button {
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+  background-color: #3f51b5;
+  color: #fff;
   font-weight: 500;
   padding: 14px;
   border-radius: 8px;
   border: 1px solid transparent;
   transition: all 0.2s ease;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
-.answer-btn:hover {
-  border: 1px solid blue;
-  background-color: #fff;
+.answer-buttons button:hover {
+  border: 1px solid #303f9f;
+  background-color: #303f9f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
 }
 
 /* Result Message */
@@ -139,5 +151,15 @@ border: 2px solid #4caf50;
 box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
 margin: 15px 0;
 color: #2e7d32;
+}
+
+#timer {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: white;
+  transition: all 0.3s ease;
 }
 
