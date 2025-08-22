@@ -16,6 +16,9 @@ scienceButton.addEventListener("click", startQuiz)
 const sportsButton = document.getElementById("sports-button")
 sportsButton.addEventListener("click", startQuiz)
 
+const hardcoreButton = document.getElementById("hardcore-button")
+hardcoreButton.addEventListener("click", startQuiz)
+
 
 const answerButton1 = document.querySelector(".answer-btn-1");
 const answerButton2 = document.querySelector(".answer-btn-2");
@@ -98,15 +101,15 @@ function startQuiz() {
 
 
 function showResult() {
-
-  if(currentQuestionIndex === 10) {
+  const total = currentQuestions.length;
+  if(currentQuestionIndex === total) {
     stopTimer(); // Stop the timer when quiz is completed
     document.getElementById("question-screen").style.display = "none";
     document.getElementById("result-screen").style.display = "block";
 
     document.getElementById("final-score").textContent = score;
     document.getElementById("result-message").textContent = 
-      score >= 70 ? "YOU PASSSSSEEEDDD conrgatzz homie fr fr" : "HAHAHAHA LOSER you failed gg noob lmaooo";
+  score >= (total * 7) ? "YOU PASSSSSEEEDDD conrgatzz homie fr fr" : "HAHAHAHA LOSER you failed gg noob lmaooo";
 
      
   }
@@ -130,6 +133,7 @@ function restartQuiz() {
   document.getElementById("timer").textContent = timer;
   questionBox.innerHTML = "";
   selectedAnswer = null;
+  document.body.classList.remove('hardcore-mode');
 
 }
 
@@ -162,6 +166,10 @@ function selectTheme(theme) {
   } else if (theme === "sports") {
     currentQuestions = sports;
     console.log("Sports questions loaded:", sports);
+  } else if (theme === "hardcore") {
+    currentQuestions = hardcore;
+    console.log("Hardcore questions loaded:", hardcore);
+    enableHardcoreVisuals();
   } else {
     console.error("Unknown theme selected:", theme);
     return;
@@ -172,6 +180,7 @@ function selectTheme(theme) {
   question = currentQuestions[currentQuestionIndex];
   console.log("Current question set to:", question);
   questionBox.innerHTML = `<h2>${question.question}</h2>`;
+  document.getElementById('totalQuestions').textContent = currentQuestions.length;
   
 
   // fetch(`assets/data/${theme}.json`)
@@ -186,6 +195,10 @@ function selectTheme(theme) {
   //   .catch(error => {
   //     console.error("Failed to load questions:", error);
   //   });
+}
+
+function enableHardcoreVisuals() {
+  document.body.classList.add('hardcore-mode');
 }
 
 function displayOptions(theme) {
@@ -247,6 +260,15 @@ function displayOptions(theme) {
     answerButton4.innerHTML = `<p>${options[3]}</p>`;
     catName1.innerHTML = 'Sports';
     console.log("Sports options displayed:", options);
+  }
+  else if (theme === "hardcore") {
+    options = [...question.options];
+    answerButton1.innerHTML = `<p>${options[0]}</p>`;
+    answerButton2.innerHTML = `<p>${options[1]}</p>`;
+    answerButton3.innerHTML = `<p>${options[2]}</p>`;
+    answerButton4.innerHTML = `<p>${options[3]}</p>`;
+    catName1.innerHTML = 'HARDCORE';
+    document.body.classList.add('hardcore-mode');
   }
 }
 
@@ -333,6 +355,8 @@ function nextQuestion() {
     theme = "science";
   } else if (currentQuestions === sports) {
     theme = "sports";
+  } else if (currentQuestions === hardcore) {
+    theme = "hardcore";
   }
   displayOptions(theme);
 
@@ -340,6 +364,7 @@ function nextQuestion() {
 
   
   document.getElementById("questionNumber").textContent = currentQuestionIndex + 1;
+  document.getElementById("totalQuestions").textContent = currentQuestions.length;
   showResult();
 
 }

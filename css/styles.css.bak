@@ -35,8 +35,11 @@ h2 {
   font-weight: 700;
   margin-bottom: 15px;
 }
+}
 
 h3 {
+
+  .hardcore-mode {
   font-size: 22px;
   margin: 12px 0;
 }
@@ -44,19 +47,27 @@ h3 {
 p {
   margin: 12px 0;
   
+
+  @keyframes hardcore-flicker {
   font-size: 16px;
 }
 
+
+  .hardcore-mode h2, .hardcore-mode #question-box, .hardcore-mode .answer-buttons button {
 /* Buttons */
 button {
   background-color: #3f51b5;
   color: #fff;
   border: none;
+
+  .hardcore-mode .answer-buttons button:hover {
   padding: 14px 24px;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
   margin: 10px 8px;
+
+  .hardcore-btn {
   
 }
 
@@ -64,6 +75,8 @@ button:hover {
   background-color: #303f9f;
 }
 
+
+  @keyframes hardcore-btn-flicker {
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
@@ -162,56 +175,4 @@ color: #2e7d32;
   color: white;
   transition: all 0.3s ease;
 }
-
-/* Hardcore mode visuals */
-body.hardcore-mode {
-  background: radial-gradient(circle at center, #1a1a1a 0%, #000 80%);
-  animation: pulseBg 6s infinite alternate;
-  color: #f8f8f8;
-}
-
-body.hardcore-mode #question-screen,
-body.hardcore-mode #theme-screen,
-body.hardcore-mode #result-screen {
-  background: rgba(10,10,10,0.92);
-  border: 2px solid #5c0000;
-  box-shadow: 0 0 25px rgba(150,0,0,0.6), 0 0 60px rgba(255,0,0,0.15) inset;
-  color: #eee;
-}
-
-body.hardcore-mode #question-box {
-  background: linear-gradient(135deg, #250000, #111);
-  color: #ffdddd;
-  text-shadow: 0 0 6px rgba(255,0,0,0.4);
-  border: 1px solid #400;
-}
-
-body.hardcore-mode .answer-buttons button {
-  background: #220000;
-  border: 1px solid #440000;
-  color: #ffcccc;
-}
-body.hardcore-mode .answer-buttons button:hover {
-  background: #440000;
-  box-shadow: 0 0 12px rgba(255,0,0,0.4);
-}
-
-body.hardcore-mode .hardcore-btn {
-  background: linear-gradient(90deg,#600,#900);
-  animation: flicker 2.2s infinite;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-@keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-  20%, 24%, 55% { opacity: 0.25; }
-}
-
-@keyframes pulseBg {
-  from { filter: hue-rotate(0deg) brightness(0.9); }
-  to { filter: hue-rotate(25deg) brightness(1.05); }
-}
-
 
