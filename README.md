@@ -7,6 +7,29 @@ This pseudocode outlines the core logic for a quiz web app with two themes: **Ge
 
 ---
 
+# Wireframe 
+
+![Wireframe of Yasee's Quiz UI](./assets/images/wireframe.png)
+
+## You can check the [WireFrame here](https://drive.google.com/drive/folders/1LMUCB4N2V3ZH1M2t5TxaWbozZPM4_8dT?usp=sharing)
+
+## You can check the [Trello To Do List here](https://trello.com/invite/b/686e6356dd76c4f90af1e074/ATTIa5090a38d96e271c7c063ae7ace02ab99A80F9AA/ga-project-1)
+
+
+## You ca check the [Deployed Link](http://yaseen-quiz-hardcore.surge.sh/)
+
+## Technologies Used
+HTML, CSS (Flexbox), Vanilla JavaScript, Node.js.
+
+## Next Steps (Planned Enhancements / Stretch Goals)
+- Randomize answer order each load to reduce memorization
+- Add progress bar and visual timer depletion ring
+- Store and display high scores (localStorage)
+- Add medium/hard difficulty tiers beyond Hardcore novelty mode
+-
+
+
+
 ## 🔁 Game Flow
 
 ```plaintext
@@ -47,14 +70,4 @@ START PROGRAM
 END PROGRAM
 
 ```
-# Wireframe 
-
-![Wireframe of Yasee's Quiz UI](./assets/images/wireframe.png)
-
-## You can check the [WireFrame here](https://drive.google.com/drive/folders/1LMUCB4N2V3ZH1M2t5TxaWbozZPM4_8dT?usp=sharing)
-
-## You can check the [Trello To Do List here](https://trello.com/invite/b/686e6356dd76c4f90af1e074/ATTIa5090a38d96e271c7c063ae7ace02ab99A80F9AA/ga-project-1)
-
-
-## You ca check the [Deployed Link](http://yaseen-quiz-hardcore.surge.sh/)
 
