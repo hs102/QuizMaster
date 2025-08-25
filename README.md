@@ -1,16 +1,11 @@
 # Yaseen-Project-1
 
-# 🧠 Pseudocode for Yaseen's Quiz: Geography & History
+# 🧠 Pseudocode for QuizMaster!
 
 ## 🎮 Overview
 This pseudocode outlines the core logic for a quiz web app with two themes: **Geography** and **History**. It includes theme selection, question handling, scoring mechanics, and result display.
 
 ---
-
-# Wireframe 
-
-![Wireframe of Yasee's Quiz UI](./assets/images/wireframe.png)
-
 ## You can check the [WireFrame here](https://drive.google.com/drive/folders/1LMUCB4N2V3ZH1M2t5TxaWbozZPM4_8dT?usp=sharing)
 
 ## You can check the [Trello To Do List here](https://trello.com/invite/b/686e6356dd76c4f90af1e074/ATTIa5090a38d96e271c7c063ae7ace02ab99A80F9AA/ga-project-1)
@@ -26,7 +21,13 @@ HTML, CSS (Flexbox), Vanilla JavaScript, Node.js.
 - Add progress bar and visual timer depletion ring
 - Store and display high scores (localStorage)
 - Add medium/hard difficulty tiers beyond Hardcore novelty mode
--
+
+
+# Wireframe 
+
+![Wireframe of Yasee's Quiz UI](./assets/images/wireframe.png)
+
+
 
 
 
